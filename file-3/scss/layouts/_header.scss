@@ -1,0 +1,11 @@
+@use '../utils' as *;
+
+.header {
+    padding: rem(25px) 0;
+    @include transition;
+
+    &-scrolled {
+        background-color: #4777a7;
+        padding: rem(15px) 0;
+    }
+}

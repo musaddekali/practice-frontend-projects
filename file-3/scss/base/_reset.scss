@@ -1,0 +1,41 @@
+@use './typography' as *;
+@use '../utils' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: {
+    family: Work Sans, sans-serif;
+    weight: 400;
+  }
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+  @include transition;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font : {
+    family: Noto Serif Myanmar, sans-serif;
+    weight: bold;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

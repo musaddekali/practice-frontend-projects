@@ -1,0 +1,207 @@
+@use '../utils' as *;
+
+.hero {
+  padding-top: rem(270px);
+  background-size: cover !important;
+  background-position: bottom right;
+  position: relative;
+
+  @include breakpoint-up("medium") {
+    background-attachment: fixed !important;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      179.46deg,
+      #002f51 -28.55%,
+      rgba(20, 45, 63, 0.34) 26.73%,
+      #142d3f 120.93%
+    );
+    @include breakpoint-up("medium") {
+      background-attachment: fixed !important;
+    }
+  }
+
+  &-text {
+    margin-bottom: rem(60px);
+    width: 50%;
+    @include breakpoint-down("medium") {
+      width: 80%;
+    }
+    @include breakpoint-down("small") {
+      width: 100%;
+    }
+
+    h1 {
+      font-size: rem(60px);
+      line-height: rem(60px);
+      margin-bottom: rem(20px);
+      color: #fff;
+      @include breakpoint-down("medium") {
+        font-size: rem(40px);
+        line-height: rem(40px);
+      }
+    }
+
+    p {
+      font-size: rem(26px);
+      line-height: rem(21px);
+      color: #fff;
+    }
+  }
+
+  &-filters {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 0;
+    color: #142d3f;
+    background-color: #ffffff;
+
+    @include breakpoint-down("medium") {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+
+    @include breakpoint-down("small") {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+
+    .filter-box {
+      padding: rem(38px) rem(34px);
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+      p {
+        margin-top: rem(20px);
+        margin-bottom: 0;
+        line-height: rem(13px);
+        letter-spacing: rem(1px);
+      }
+
+      &-text {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+
+        h5 {
+          font-size: rem(20px);
+          line-height: rem(28px);
+          margin-bottom: rem(10px);
+        }
+
+        p {
+          font-size: rem(12px);
+          line-height: rem(18px);
+          margin: 0;
+        }
+      }
+
+      &-color {
+        margin: rem(-12px) 0 rem(-12px) 0;
+        color: #ffffff;
+        background: #4777a7;
+
+        @include breakpoint-down("medium") {
+          margin: 0;
+        }
+
+        p {
+          margin-bottom: rem(28px);
+        }
+
+        a {
+          font-size: rem(10px);
+          line-height: rem(8px);
+          letter-spacing: rem(2px);
+          color: inherit;
+
+          &:hover {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  &-slider-btns {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: rem(60px);
+
+    button {
+      width: rem(34px);
+      height: rem(34px);
+      border: none;
+      outline: none;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background-color: transparentize(#ffffff, 0.65);
+      color: #ffffff;
+      @include transition;
+
+      &:hover {
+        background-color: #ffffff;
+        color: #34607f;
+      }
+
+      & + button {
+        margin-left: rem(18px);
+      }
+    }
+  }
+
+  &-scroll-down {
+    display: flex;
+    justify-content: center;
+    padding-bottom: rem(44px);
+
+    &-inner {
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      cursor: pointer;
+      @include transition;
+
+      &:hover {
+        transform: translateY(rem(10px));
+      }
+    }
+
+    span {
+      font-size: rem(10px);
+      line-height: rem(8px);
+      letter-spacing: rem(2px);
+      margin-top: rem(13px);
+    }
+  }
+}
